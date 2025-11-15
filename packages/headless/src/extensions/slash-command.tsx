@@ -49,7 +49,7 @@ const renderItems = (elementRef?: RefObject<Element> | null) => {
         return false;
       }
 
-      // @ts-ignore
+      // @ts-expect-error
       popup = tippy("body", {
         getReferenceClientRect: props.clientRect,
         appendTo: () => (elementRef ? elementRef.current : document.body),
@@ -75,7 +75,7 @@ const renderItems = (elementRef?: RefObject<Element> | null) => {
         return true;
       }
 
-      // @ts-ignore
+      // @ts-expect-error
       return component?.ref?.onKeyDown(props);
     },
     onExit: () => {
