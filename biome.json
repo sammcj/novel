@@ -1,20 +1,25 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
   "files": {
     "ignoreUnknown": true,
-    "ignore": [
-      "node_modules/*",
-      "*.config.*",
-      "*.json",
-      "tsconfig.json",
-      ".turbo",
-      "**/dist",
-      "**/out",
-      ".next"
+    "includes": [
+      "**",
+      "!**/node_modules/**/*",
+      "!**/*.config.*",
+      "!**/*.json",
+      "!**/tsconfig.json",
+      "!**/.turbo",
+      "!**/dist",
+      "!**/out",
+      "!**/.next"
     ]
   },
-  "organizeImports": {
-    "enabled": true
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "css": {
+    "parser": {
+      "cssModules": false,
+      "tailwindDirectives": true
+    }
   },
   "linter": {
     "enabled": true,
@@ -31,6 +36,9 @@
       },
       "style": {
         "noParameterAssign": "off"
+      },
+      "suspicious": {
+        "noUnknownAtRules": "off"
       }
     }
   },
